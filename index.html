@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Programa personalizado (3 meses + 3 sesiones) | Irene Amezcua</title>
-  <meta name="description" content="Programa online de 3 meses con 3 sesiones grabadas y 3 sesiones personalizadas. Reordena tus hábitos, mejora tu energía y cuida tu bienestar con acompañamiento individualizado. Precio 499 €." />
+  <meta name="description" content="Programa online de 3 meses con 3 sesiones grabadas y 3 sesiones personalizadas. Solo 5 plazas con -25 % de descuento en Black Friday y Cyber Monday: de 499 € a 374 € (ahorras 125 €). Escríbele a Irene por WhatsApp." />
   <meta name="theme-color" content="#ffffff" />
 
   <link rel="canonical" href="https://ireneamezcua.github.io/programa-personalizado/" />
@@ -14,19 +14,19 @@
   <meta property="og:locale" content="es_ES" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Programa personalizado (3 meses + 3 sesiones) | Irene Amezcua" />
-  <meta property="og:description" content="3 meses, 3 sesiones grabadas + 3 sesiones personalizadas. Acompañamiento individual para ordenar hábitos y mejorar tu bienestar. Precio 499 €." />
+  <meta property="og:description" content="Solo 5 plazas con -25 % en Black Friday y Cyber Monday. Programa de 3 meses con 3 sesiones grabadas + 3 sesiones personalizadas. De 499 € a 374 € (ahorras 125 €)." />
   <meta property="og:url" content="https://ireneamezcua.github.io/programa-personalizado/" />
   <meta property="og:image" content="https://ireneamezcua.github.io/programa-personalizado/img/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Irene Amezcua" />
-  <meta property="product:price:amount" content="499.00" />
+  <meta property="product:price:amount" content="374.00" />
   <meta property="product:price:currency" content="EUR" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Programa personalizado (3 meses + 3 sesiones) | Irene Amezcua" />
-  <meta name="twitter:description" content="3 meses, 3 sesiones grabadas + 3 sesiones personalizadas. Acompañamiento individual para ordenar hábitos y mejorar tu bienestar. Precio 499 €." />
+  <meta name="twitter:description" content="Solo 5 plazas con -25 % en Black Friday y Cyber Monday. De 499 € a 374 € (ahorras 125 €). Acompañamiento personalizado durante 3 meses." />
   <meta name="twitter:image" content="https://ireneamezcua.github.io/programa-personalizado/img/og.jpg" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
     :root{
       --ink:#0f172a; --muted:#334155; --line:#e5e7eb; --brand:#A47C65;
       --deal:#22c55e; --deal-ink:#052e16; --beige:#fdfaf8; --max:760px;
-      --urg-bg:#fff7ed; --urg-ink:#9a3412;
+      --urg-bg:#fff7ed; --urg-ink:#9a3412; --strike:#9ca3af;
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:Inter,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
@@ -62,8 +62,10 @@
     .button:hover{filter:brightness(.98)}
     .cta-spacer{margin:22px 0;}
     .price-block{background:var(--beige);border:1px solid var(--line);border-radius:16px;text-align:center;padding:24px 18px;margin:24px 0;}
-    .price-label{font-size:14px;font-weight:500;color:var(--muted);margin-bottom:4px;}
-    .price{font-weight:900;font-size:clamp(36px,7vw,52px);margin:0;color:var(--ink);}
+    .price-label{font-size:14px;font-weight:600;color:var(--urg-ink);margin-bottom:4px;}
+    .price-original{font-size:16px;color:var(--strike);text-decoration:line-through;margin:0 0 4px;}
+    .price{font-weight:900;font-size:clamp(34px,6.5vw,48px);margin:0;color:var(--ink);}
+    .price-saving{font-size:14px;font-weight:600;color:var(--urg-ink);margin-top:6px;}
     .frame-4x3{width:100%;aspect-ratio:4/3;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#f8fafc;margin-top:12px;}
     .frame-4x3 img{width:100%;height:100%;object-fit:cover;display:block;}
 
@@ -111,7 +113,7 @@
     .cookie button{border:1px solid #d6d3d1;border-radius:10px;padding:10px 12px;font-weight:700;cursor:pointer;background:#fff}
     .cookie .accept{background:#22c55e;border-color:#16a34a;color:#052e16}
 
-    /* Botón flotante WhatsApp (solo se mostrará vía JS en móvil) */
+    /* Botón flotante WhatsApp */
     .wa-float{
       position:fixed;
       left:16px;right:16px;bottom:16px;
@@ -157,7 +159,7 @@
         <!-- versión corta para móvil -->
         <p class="lead lead-short">
           3 meses para transformar tus hábitos y tu salud con un acompañamiento personalizado.
-          <br>Trabajaremos juntas por WhatsApp y sesiones 1:1 para que puedas mantener los cambios en el tiempo.
+          <br><strong>Solo 5 plazas con -25 % en Black Friday y Cyber Monday.</strong>
         </p>
 
         <!-- versión larga para desktop -->
@@ -167,7 +169,7 @@
 
         <!-- urgencia arriba -->
         <span class="badge-urgency badge-urgency--block">
-          Solo 5 plazas · Inscripciones abiertas del viernes de Black Friday al lunes de Cyber Monday.
+          Solo 5 plazas con -25 % · Inscripciones abiertas del viernes de Black Friday al lunes de Cyber Monday.
         </span>
 
         <div class="cta-wrap cta-spacer">
@@ -179,7 +181,11 @@
 
       <section>
         <img src="img/cover.jpg" class="photo" alt="">
-        <p class="muted" style="font-size:14px;margin-top:6px;">Precio <strong>499 €</strong>. La compra se completa directamente con Irene por WhatsApp.</p>
+        <p class="muted" style="font-size:14px;margin-top:6px;">
+          Precio regular <span style="text-decoration:line-through;color:var(--strike);">499 €</span>.
+          <strong>Precio especial Black Friday &amp; Cyber Monday: 374 € (ahorras 125 €).</strong>
+          La compra se completa directamente con Irene por WhatsApp.
+        </p>
       </section>
 
       <!-- VIDEO -->
@@ -243,7 +249,7 @@
         </p>
       </section>
 
-      <!-- TESTIMONIOS: se mantiene igual -->
+      <!-- TESTIMONIOS (sin cambios) -->
       <section id="testimonios">
         <h2>Lo que dicen quienes ya lo han hecho</h2>
         <blockquote>“Este taller me dio el impulso y la motivación para conectar con pequeñas cosas del día que condicionan mi salud.” — Ana F.</blockquote>
@@ -258,12 +264,14 @@
         <h2>Empieza hoy mismo</h2>
 
         <span class="badge-urgency badge-urgency--block">
-          Solo 5 plazas disponibles entre Black Friday y Cyber Monday.
+          Solo 5 plazas con precio especial Black Friday &amp; Cyber Monday.
         </span>
 
         <div class="price-block">
-          <div class="price-label">Programa de 3 meses con acompañamiento individualizado</div>
-          <div class="price">499&nbsp;€</div>
+          <div class="price-label">Precio especial Black Friday &amp; Cyber Monday</div>
+          <p class="price-original">Antes 499 €</p>
+          <p class="price">374&nbsp;€</p>
+          <p class="price-saving">Ahorras 125 € (25 % de descuento)</p>
         </div>
         <p class="muted" style="text-align:center;margin:10px 0 14px">
           Escríbeme por WhatsApp y vemos juntas si este programa encaja con lo que necesitas, sin compromiso.
@@ -289,7 +297,7 @@
     </main>
   </div>
 
-  <!-- Botón flotante WhatsApp (solo móvil, se muestra vía JS tras gestionar cookies) -->
+  <!-- Botón flotante WhatsApp -->
   <a id="wa-float" class="wa-float" href="#" target="_blank" rel="nofollow noopener">
     Hablar con Irene por WhatsApp
   </a>
@@ -311,7 +319,7 @@
 
     function setupWhatsAppLinks(){
       var phone = "34625362844";
-      var msg   = "Hola Irene, he visto tu programa personalizado (3 meses + 3 sesiones) y quiero más información.";
+      var msg   = "Hola Irene, he visto tu programa personalizado en la oferta de Black Friday / Cyber Monday (de 499 € a 374 €) y quiero más información.";
       var url   = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
       ["wa-header","wa-mid","wa","wa-float"].forEach(function(id){
         var el = document.getElementById(id);
@@ -359,7 +367,7 @@
           if(el) el.addEventListener('click',function(){
             fbq('track','Lead',{
               content_name:'Programa personalizado (3 meses + 3 sesiones)',
-              value:499,
+              value:374,
               currency:'EUR',
               button_id:id
             });
