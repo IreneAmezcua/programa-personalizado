@@ -94,6 +94,20 @@
     .cookie .actions{display:flex;gap:8px}
     .cookie button{border:1px solid #d6d3d1;border-radius:10px;padding:10px 12px;font-weight:700;cursor:pointer;background:#fff}
     .cookie .accept{background:#22c55e;border-color:#16a34a;color:#052e16}
+
+    /* Ajuste específico para desktop */
+@media (min-width: 900px) {
+  .frame-16x9 {
+    max-width: 420px;      /* tamaño perfecto, ajustable */
+    margin-left: auto;
+    margin-right: auto;    /* centra el vídeo en desktop */
+    aspect-ratio: 9/16;    /* mantiene el formato story */
+  }
+
+  .frame-16x9 video {
+    object-fit: cover;     /* evita bandas negras siempre */
+  }
+}
   </style>
 </head>
 
