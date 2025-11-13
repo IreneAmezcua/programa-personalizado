@@ -3,9 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Programa personalizado (3 meses + 3 sesiones) | Irene Amezcua</title>
-  <meta name="description" content="Programa online de 3 meses para reordenar tus hábitos y cuidar tu bienestar. Incluye 3 sesiones grabadas y 3 sesiones personalizadas. Precio 499 €. Escribe por WhatsApp para reservar.">
+  <meta name="description" content="Programa online de 3 meses con 3 sesiones grabadas y 3 sesiones personalizadas. Reordena tus hábitos, mejora tu energía y cuida tu bienestar con acompañamiento individualizado. Precio 499 €." />
+  <meta name="theme-color" content="#ffffff" />
+
+  <link rel="canonical" href="https://ireneamezcua.github.io/programa-personalizado/" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Programa personalizado (3 meses + 3 sesiones) | Irene Amezcua" />
+  <meta property="og:description" content="3 meses, 3 sesiones grabadas + 3 sesiones personalizadas. Acompañamiento individual para ordenar hábitos y mejorar tu bienestar. Precio 499 €." />
+  <meta property="og:url" content="https://ireneamezcua.github.io/programa-personalizado/" />
+  <meta property="og:image" content="https://ireneamezcua.github.io/programa-personalizado/img/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Irene Amezcua" />
+  <meta property="product:price:amount" content="499.00" />
+  <meta property="product:price:currency" content="EUR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Programa personalizado (3 meses + 3 sesiones) | Irene Amezcua" />
+  <meta name="twitter:description" content="3 meses, 3 sesiones grabadas + 3 sesiones personalizadas. Acompañamiento individual para ordenar hábitos y mejorar tu bienestar. Precio 499 €." />
+  <meta name="twitter:image" content="https://ireneamezcua.github.io/programa-personalizado/img/og.jpg" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --ink:#0f172a; --muted:#334155; --line:#e5e7eb; --brand:#A47C65;
@@ -33,10 +58,21 @@
     .price{font-weight:900;font-size:clamp(36px,7vw,52px);margin:0;color:var(--ink);}
     .frame-4x3{width:100%;aspect-ratio:4/3;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#f8fafc;margin-top:12px;}
     .frame-4x3 img{width:100%;height:100%;object-fit:cover;display:block;}
+
+    /* VIDEO */
+    .frame-16x9{width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#000;margin-top:12px;position:relative}
+    .frame-16x9 video{width:100%;height:100%;display:block;background:#000}
+    .unmute{
+      position:absolute;right:12px;bottom:12px;z-index:2;
+      background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;
+      font-weight:800;cursor:pointer;display:none;
+    }
+
     footer{border-top:1px solid var(--line);margin-top:18px;padding:14px 0;color:#64748b;font-size:14px}
     footer .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
     footer a{color:#0ea5e9;text-decoration:underline}
-    /* Cookie banner */
+
+    /* Cookies */
     .cookie{position:fixed;left:16px;right:16px;bottom:16px;background:#f8f1ea;color:#1f2937;border:1px solid #e7d8cc;border-radius:12px;padding:12px 14px;display:none;gap:10px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.08);z-index:30}
     .cookie p{margin:0 0 8px;font-size:14px}
     .cookie .actions{display:flex;gap:8px}
@@ -44,62 +80,80 @@
     .cookie .accept{background:#22c55e;border-color:#16a34a;color:#052e16}
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <main class="container">
+
       <header>
         <h1>Programa personalizado: 3 meses para reordenar tus hábitos y cuidar tu bienestar</h1>
         <p class="lead">Durante los últimos meses, muchas personas me han escrito con el mismo deseo: mantener cambios reales y aprender a cuidarse de forma consciente y sostenible. Por eso, he creado este programa online de tres meses con acompañamiento individualizado para adaptar cada aprendizaje a tu ritmo, tu historia y tus necesidades.</p>
 
-        <!-- CTA en header -->
         <div class="cta-wrap cta-spacer">
-          <a id="wa-header" class="button" href="#" target="_blank" rel="nofollow noopener" aria-label="Pedir info por WhatsApp">Pedir info por WhatsApp</a>
+          <a id="wa-header" class="button" href="#" target="_blank" rel="nofollow noopener">Pedir info por WhatsApp</a>
         </div>
       </header>
 
-      <section aria-label="Foto principal">
-        <img src="img/cover.jpg" alt="Programa personalizado de bienestar y organización de hábitos" class="photo">
+      <section>
+        <img src="img/cover.jpg" class="photo" alt="">
         <p class="muted" style="font-size:14px;margin-top:6px;">Precio <strong>499 €</strong>. La compra se completa directamente con Irene por WhatsApp.</p>
       </section>
 
-      <!-- Qué encontrarás dentro -->
+      <!-- VIDEO -->
+      <section id="video">
+        <h2>Conóceme y descubre cómo trabajaremos</h2>
+
+        <div class="frame-16x9">
+          <video id="introVid"
+                 preload="metadata"
+                 playsinline
+                 controls
+                 poster="img/cover.jpg">
+            <source src="video/intro.mp4" type="video/mp4">
+            Tu navegador no soporta este formato.
+          </video>
+
+          <button id="unmute" class="unmute">Activar sonido</button>
+        </div>
+
+        <p class="muted" style="font-size:14px;margin-top:8px">Vídeo de 1:30 min donde te explico cómo es el programa y qué vas a conseguir en estos 3 meses.</p>
+      </section>
+
       <section id="incluye">
         <h2>Qué encontrarás dentro</h2>
         <ul class="muted">
-          <li><strong>3 sesiones grabadas</strong> (1h 30 min cada una) para avanzar a tu ritmo.</li>
+          <li><strong>3 sesiones grabadas</strong> (1h 30 min cada una).</li>
           <li><strong>Cuaderno de trabajo imprimible</strong> y guías prácticas.</li>
           <li><strong>Acceso ilimitado</strong> al contenido.</li>
-          <li><strong>3 sesiones personalizadas</strong> (40 min) conmigo, para diseñar un plan adaptado a ti.</li>
+          <li><strong>3 sesiones personalizadas</strong> (40 min) conmigo.</li>
         </ul>
-        <p class="muted" style="margin-top:8px">Tras tu inscripción, organizaremos las sesiones mensuales, marcando juntos los objetivos a trabajar en cada una.</p>
+        <p class="muted" style="margin-top:8px;">Tras tu inscripción, organizaremos las sesiones mensuales para adaptar los contenidos a tu caso.</p>
       </section>
 
-      <!-- CTA intermedia -->
       <div class="cta-wrap cta-spacer">
         <a id="wa-mid" class="button" href="#" target="_blank" rel="nofollow noopener">Pedir info ahora</a>
       </div>
 
-      <!-- Aprenderás a -->
       <section id="aprenderas">
         <h2>Aprenderás a</h2>
         <ul class="muted">
-          <li>Mejorar tu energía y tu descanso con pautas realistas.</li>
-          <li>Fortalecer tu sistema inmune y prepararte para los cambios de estación.</li>
-          <li>Equilibrar tu microbiota intestinal según tus antecedentes y necesidades.</li>
-          <li>Reducir la inflamación silenciosa que afecta a tu bienestar, previniendo desequilibrios hormonales, digestivos, inmunitarios y cardiovasculares.</li>
-          <li>Crear rutinas sostenibles y realistas que encajen con tu vida y te ayuden a mantener el equilibrio a largo plazo.</li>
+          <li>Mejorar tu energía y tu descanso.</li>
+          <li>Fortalecer tu sistema inmune.</li>
+          <li>Equilibrar tu microbiota intestinal según tu historia y tus antecedentes.</li>
+          <li>Reducir la inflamación silenciosa.</li>
+          <li>Crear rutinas sostenibles que puedas mantener.</li>
         </ul>
-      </section>
-<div class="frame-4x3">
-  <img src="img/lifestyle.jpg" alt="Rutinas y hábitos saludables" loading="lazy">
-</div>
-      <!-- Diferenciales -->
-      <section id="diferente">
-        <h2>Por qué este programa es diferente</h2>
-        <p class="muted">No es un curso teórico ni una guía genérica. Es un acompañamiento real, con seguimiento personalizado y herramientas que podrás aplicar desde el primer día. Está pensado para ti si sientes que necesitas orden, claridad y un método que te ayude a cuidarte sin extremos ni exigencias. Adaptaremos las sesiones a tu ritmo.</p>
+
+        <div class="frame-4x3">
+          <img src="img/lifestyle.jpg" alt="" loading="lazy">
+        </div>
       </section>
 
-      <!-- Testimonios -->
+      <section id="diferente">
+        <h2>Por qué este programa es diferente</h2>
+        <p class="muted">No es un curso teórico ni una guía genérica. Es un acompañamiento real, con seguimiento personalizado y herramientas prácticas desde el primer día. Adaptamos juntos las sesiones a tu ritmo y a tus objetivos.</p>
+      </section>
+
       <section id="testimonios">
         <h2>Lo que dicen quienes ya lo han hecho</h2>
         <blockquote>“Este taller me dio el impulso y la motivación para conectar con pequeñas cosas del día que condicionan mi salud.” — Ana F.</blockquote>
@@ -107,17 +161,16 @@
         <blockquote>“Me encantó cómo explicas la conexión del nervio vago y las emociones. Me está ayudando a cuidar mi mente y mi cuerpo con más calma.” — Andrea P.</blockquote>
         <blockquote>“Me ayudó a organizar mi rutina con conciencia. Ha sido un crecimiento interno que me ha empoderado aún más. ¡Repetiría sin dudarlo!” — Ana</blockquote>
         <blockquote>“Escuchar tus sesiones fue como un respiro. En un momento de muchos cambios, este espacio me trajo luz y claridad.” — Virginia</blockquote>
-        <blockquote>“Gracias por la calma, la pasión y la claridad que transmites, Irene. Este espacio ha sido un ratito de luz y me está ayudando a aplicar los hábitos poco a poco.” — Selena</blockquote>
+        <blockquote>“Gracias por la calma, la pasión y la claridad que transmites. Este espacio ha sido un ratito de luz.” — Selena</blockquote>
       </section>
 
-      <!-- Reserva -->
       <section id="reserva">
         <h2>Empieza hoy mismo</h2>
         <div class="price-block">
           <div class="price-label">Programa de 3 meses con acompañamiento individualizado</div>
           <div class="price">499&nbsp;€</div>
         </div>
-        <p class="muted" style="text-align:center;margin:10px 0 14px">Accede al contenido completo, empieza hoy y transforma tu bienestar desde la raíz.</p>
+        <p class="muted" style="text-align:center;margin:10px 0 14px">Accede al contenido completo y empieza hoy mismo.</p>
         <div class="cta-wrap">
           <a id="wa" class="button" href="#" target="_blank" rel="nofollow noopener">Habla conmigo por WhatsApp</a>
         </div>
@@ -133,14 +186,15 @@
           </span>
         </div>
       </footer>
+
     </main>
   </div>
 
-  <!-- Banner de cookies -->
-  <div id="cookie" class="cookie" role="dialog" aria-live="polite">
+  <!-- Cookies -->
+  <div id="cookie" class="cookie">
     <div style="flex:1">
-      <strong>Cuidamos tu experiencia</strong>
-      <p>Usamos cookies para ofrecerte la mejor experiencia posible. Más info en la <a href="/programa-personalizado/legal/cookies.html">Política de Cookies</a>.</p>
+      <strong>Tu privacidad</strong>
+      <p>Usamos cookies para análisis y marketing. Más info en la <a href="/programa-personalizado/legal/cookies.html">Política de Cookies</a>.</p>
       <div class="actions">
         <button class="accept" id="cAccept">Aceptar</button>
         <button id="cReject">Rechazar</button>
@@ -149,63 +203,94 @@
   </div>
 
   <script>
-    // Año footer
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // WhatsApp links (mismo número, mensaje adaptado al programa personalizado)
     (function(){
-      var phone = "34625362844";
-      var msg = "Hola Irene, he visto la web del programa personalizado (3 meses + 3 sesiones) y quiero más información para reservar.";
-      var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
-      ["wa-header","wa-mid","wa"].forEach(function(id){
+      var phone="34625362844";
+      var msg="Hola Irene, he visto tu programa personalizado (3 meses + 3 sesiones) y quiero más información.";
+      var url="https://wa.me/"+phone+"?text="+encodeURIComponent(msg);
+      ["wa-header","wa-mid","wa"].forEach(id=>{
         var el=document.getElementById(id); if(el) el.href=url;
       });
     })();
 
-    // Cookie consent + Meta Pixel + track Lead
+    /* Cookies + Meta Pixel */
     (function(){
       var CK='cookie_consent_v1';
-      var banner=document.getElementById('cookie');
-      function hasChoice(){return ['accepted','rejected'].includes(localStorage.getItem(CK));}
-      function accepted(){return localStorage.getItem(CK)==='accepted';}
-      function show(){banner.style.display='grid';}
-      function hide(){banner.style.display='none';}
-      function accept(){localStorage.setItem(CK,'accepted');hide();loadPixel();}
+      var b=document.getElementById('cookie');
+      function has(){return ['accepted','rejected'].includes(localStorage.getItem(CK));}
+      function ok(){return localStorage.getItem(CK)==='accepted';}
+      function show(){b.style.display='grid';}
+      function hide(){b.style.display='none';}
+      function accept(){localStorage.setItem(CK,'accepted');hide();pixel();}
       function reject(){localStorage.setItem(CK,'rejected');hide();}
       document.getElementById('cAccept').onclick=accept;
       document.getElementById('cReject').onclick=reject;
-      if(!hasChoice()) show(); else if(accepted()) loadPixel();
+      if(!has()) show(); else if(ok()) pixel();
 
-      function loadPixel(){
+      function pixel(){
         if(window.fbq) return;
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
+        n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+        t=b.createElement(e);t.async=!0;t.src=v;
+        s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+
         fbq('init','1472158240804532');
         fbq('track','PageView');
 
-        function trackLead(id, label){
-          var el=document.getElementById(id); if(!el) return;
-          el.addEventListener('click', function(){
-            fbq('track','Lead',{
-              content_name:'Programa personalizado (3 meses + 3 sesiones)',
-              content_category:'Programa online',
-              value:499.00,
-              currency:'EUR',
-              button_text:label
-            });
-          }, {passive:true});
-        }
-        trackLead('wa-header','Pedir info por WhatsApp');
-        trackLead('wa-mid','Pedir info ahora');
-        trackLead('wa','Habla conmigo por WhatsApp');
+        ["wa-header","wa-mid","wa"].forEach(id=>{
+          var el=document.getElementById(id);
+          if(el) el.addEventListener('click',()=>fbq('track','Lead',{
+            content_name:'Programa personalizado',
+            value:499,currency:'EUR'
+          }),{passive:true});
+        });
       }
     })();
+
+    /* Autoplay con sonido si es posible */
+    (function(){
+      var vid=document.getElementById('introVid');
+      var btn=document.getElementById('unmute');
+
+      if(!('IntersectionObserver' in window)) return;
+
+      function tryPlay(){
+        vid.muted=false;
+        var p=vid.play();
+        if(p && p.then){
+          p.then(()=>btn.style.display='none')
+           .catch(()=>{
+             vid.muted=true;
+             vid.play();
+             btn.style.display='inline-flex';
+           });
+        }
+      }
+
+      var io=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting && e.intersectionRatio>=0.5){
+            tryPlay();
+          } else {
+            vid.pause();
+          }
+        });
+      },{threshold:[0,0.5,1]});
+
+      io.observe(vid);
+
+      btn.onclick=function(){
+        vid.muted=false;
+        vid.play().then(()=>btn.style.display='none');
+      };
+    })();
   </script>
+
   <noscript>
-    <img height="1" width="1" style="display:none" alt=""
+    <img height="1" width="1" style="display:none"
          src="https://www.facebook.com/tr?id=1472158240804532&ev=PageView&noscript=1"/>
   </noscript>
 </body>
