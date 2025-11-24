@@ -196,8 +196,9 @@
           <video id="introVid"
                  preload="metadata"
                  playsinline
-                 controls
-                 poster="img/cover.jpg">
+                 autoplay
+                 muted
+                 controls>
             <source src="video/intro.mp4" type="video/mp4">
             Tu navegador no soporta este formato.
           </video>
@@ -221,7 +222,7 @@
         <p class="muted" style="margin-top:8px;">Tras tu inscripción, organizaremos las sesiones mensuales para adaptar los contenidos a tu caso.</p>
       </section>
 
-      <!-- NUEVO BLOQUE: DETALLE DE LOS VÍDEOS -->
+      <!-- DETALLE DE LOS VÍDEOS -->
       <section id="videos">
         <h2>Esto es lo que aprenderás</h2>
 
@@ -247,21 +248,6 @@
         </a>
       </div>
 
-      <section id="aprenderas">
-        <h2>Aprenderás a</h2>
-        <ul class="muted">
-          <li>Mejorar tu energía y tu descanso.</li>
-          <li>Fortalecer tu sistema inmune.</li>
-          <li>Equilibrar tu microbiota intestinal según tu historia y tus antecedentes.</li>
-          <li>Reducir la inflamación silenciosa.</li>
-          <li>Crear rutinas sostenibles que puedas mantener.</li>
-        </ul>
-
-        <div class="frame-4x3">
-          <img src="img/lifestyle.jpg" alt="" loading="lazy">
-        </div>
-      </section>
-
       <section id="diferente">
         <h2>Por qué este programa es diferente</h2>
         <p class="muted">
@@ -269,7 +255,7 @@
         </p>
       </section>
 
-      <!-- TESTIMONIOS (sin cambios) -->
+      <!-- TESTIMONIOS -->
       <section id="testimonios">
         <h2>Lo que dicen quienes ya lo han hecho</h2>
         <blockquote>“Este taller me dio el impulso y la motivación para conectar con pequeñas cosas del día que condicionan mi salud.” — Ana F.</blockquote>
@@ -301,6 +287,18 @@
             Habla conmigo por WhatsApp
           </a>
         </div>
+      </section>
+
+      <!-- BLOQUE FINAL DE REFUERZO -->
+      <section id="aprovecha">
+        <h2>Aprovecha esta oportunidad para…</h2>
+        <ul class="muted">
+          <li>Mejorar tu energía y tu descanso.</li>
+          <li>Fortalecer tu sistema inmune.</li>
+          <li>Equilibrar tu microbiota intestinal según tu historia y tus antecedentes.</li>
+          <li>Reducir la inflamación silenciosa.</li>
+          <li>Crear rutinas sostenibles que puedas mantener.</li>
+        </ul>
       </section>
 
       <footer>
@@ -335,8 +333,10 @@
   </div>
 
   <script>
+    // año footer
     document.getElementById('y').textContent = new Date().getFullYear();
 
+    // WhatsApp links
     function setupWhatsAppLinks(){
       var phone = "34625362844";
       var msg   = "Hola Irene, he visto tu programa personalizado en la oferta de Black Friday / Cyber Monday (de 499 € a 374 €) y quiero más información.";
@@ -356,28 +356,31 @@
       }
     }
 
-    /* Cookies + Meta Pixel */
+    // Cookies + Meta Pixel
     (function(){
       var CK='cookie_consent_v1';
       var b=document.getElementById('cookie');
+
       function has(){return ['accepted','rejected'].includes(localStorage.getItem(CK));}
       function ok(){return localStorage.getItem(CK)==='accepted';}
       function show(){b.style.display='grid';}
       function hide(){b.style.display='none';}
       function accept(){localStorage.setItem(CK,'accepted');hide();pixel();showWaFloat();}
       function reject(){localStorage.setItem(CK,'rejected');hide();showWaFloat();}
+
       document.getElementById('cAccept').onclick=accept;
       document.getElementById('cReject').onclick=reject;
+
       if(!has()) show(); else { if(ok()) pixel(); showWaFloat(); }
 
       function pixel(){
         if(window.fbq) return;
-        !function(f,b,e	v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
-        n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
-        t=b.createElement(e);t.async=!0;t.src=v;
-        s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
+          n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+          t=b.createElement(e);t.async=!0;t.src=v;
+          s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+        }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
         fbq('init','1472158240804532');
         fbq('track','PageView');
@@ -396,43 +399,31 @@
       }
     })();
 
-    /* Autoplay video con sonido si es posible */
+    // Autoplay del vídeo cuando está visible + botón para activar sonido
     (function(){
       var vid=document.getElementById('introVid');
       var btn=document.getElementById('unmute');
       if(!vid || !('IntersectionObserver' in window)) return;
 
-      function tryPlay(){
-        vid.muted=false;
-        var p=vid.play();
-        if(p && p.then){
-          p.then(function(){
-            btn.style.display='none';
-          }).catch(function(){
-            vid.muted=true;
-            vid.play().catch(function(){});
-            btn.style.display='inline-flex';
-          });
-        }
-      }
+      vid.muted = true; // necesario para permitir autoplay
+      btn.style.display = 'inline-flex';
 
       var io=new IntersectionObserver(function(entries){
         entries.forEach(function(e){
           if(e.isIntersecting && e.intersectionRatio>=0.5){
-            tryPlay();
+            vid.play().catch(function(){});
           } else {
             vid.pause();
           }
         });
-      },{threshold:[0,0.5,1]});
+      },{threshold:[0.5]});
 
       io.observe(vid);
 
       btn.addEventListener('click',function(){
         vid.muted=false;
-        vid.play().then(function(){
-          btn.style.display='none';
-        }).catch(function(){});
+        vid.play().catch(function(){});
+        btn.style.display='none';
       });
     })();
   </script>
