@@ -130,6 +130,17 @@
       font-size:15px;
     }
 
+    /* Bloque foto intermedio */
+    .photo-break {
+      margin: 24px 0;
+    }
+    .photo-break .full-width-img {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+    }
+
     /* Lead corta solo en móvil, lead larga solo en desktop */
     @media (max-width: 768px){
       .lead-long{display:none;}
@@ -253,6 +264,15 @@
         <p class="muted">
           No es un curso teórico ni una guía genérica. Es un acompañamiento real, con seguimiento personalizado y herramientas prácticas desde el primer día. Adaptamos juntos las sesiones a tu ritmo y a tus objetivos.
         </p>
+      </section>
+
+      <!-- FOTO INTERMEDIA -->
+      <section class="photo-break">
+        <figure>
+          <img src="img/irene-programa.jpg"
+               alt="Irene Amezcua durante una sesión del programa personalizado"
+               class="full-width-img">
+        </figure>
       </section>
 
       <!-- TESTIMONIOS -->
