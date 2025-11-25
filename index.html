@@ -371,115 +371,131 @@
     </div>
   </div>
 
-  <script>
-    // año footer
-    document.getElementById('y').textContent = new Date().getFullYear();
+ <script>
+  // año footer (con control por si no existe el span)
+  (function () {
+    var y = document.getElementById('y');
+    if (y) y.textContent = new Date().getFullYear();
+  })();
 
-    // WhatsApp links
-    function setupWhatsAppLinks(){
-      var phone = "34625362844";
-      var msg   = "Hola Irene, he visto tu programa personalizado en la oferta de Black Friday / Cyber Monday (de 499 € a 374 €) y quiero más información.";
-      var url   = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
+  // WhatsApp links
+  function setupWhatsAppLinks(){
+    var phone = "34625362844";
+    var msg   = "Hola Irene, he visto tu programa personalizado en la oferta de Black Friday / Cyber Monday (de 499 € a 374 €) y quiero más información.";
+    var url   = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
+    ["wa-header","wa-mid","wa","wa-float"].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.href = url;
+    });
+  }
+  setupWhatsAppLinks();
+
+  function showWaFloat(){
+    var f = document.getElementById('wa-float');
+    if(!f) return;
+    if(window.innerWidth <= 768){
+      f.style.display = 'flex';
+    }
+  }
+
+  // Cookies + Meta Pixel
+  (function(){
+    var CK = 'cookie_consent_v1';
+    var b  = document.getElementById('cookie');
+
+    function show(){ b.style.display = 'grid'; }
+    function hide(){ b.style.display = 'none'; }
+
+    var acceptBtn = document.getElementById('cAccept');
+    if(acceptBtn){
+      acceptBtn.onclick = function(){
+        localStorage.setItem(CK,'accepted');
+        hide();
+      };
+    }
+
+    // Mostrar banner sólo si no hay preferencia guardada
+    if(!localStorage.getItem(CK)){
+      show();
+    }
+
+    // Iniciar pixel siempre (mejor atribución)
+    pixel();
+    showWaFloat();
+
+    function pixel(){
+      if(window.fbq) return;
+
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
+        n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+        t=b.createElement(e);t.async=!0;t.src=v;
+        s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
+      }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+      fbq("init", "1472158240804532");
+
+      // ---- PageView robusto (sólo una vez) ----
+      function sendPageViewOnce(){
+        if (window.__pvSent) return;
+        window.__pvSent = true;
+        fbq("track","PageView");
+      }
+
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+        // Si la página ya está lista cuando se evalúa el script
+        sendPageViewOnce();
+      } else {
+        // Si aún está cargando, escuchamos ambos eventos
+        window.addEventListener("load", sendPageViewOnce);
+        document.addEventListener("DOMContentLoaded", sendPageViewOnce);
+      }
+      // -----------------------------------------
+
+      // Disparo manual de Lead en todos los botones de WhatsApp
       ["wa-header","wa-mid","wa","wa-float"].forEach(function(id){
         var el = document.getElementById(id);
-        if(el) el.href = url;
+        if(el) el.addEventListener('click',function(){
+          fbq('track','Lead',{
+            content_name:'Programa personalizado (3 meses + 3 sesiones)',
+            value:374,
+            currency:'EUR',
+            button_id:id
+          });
+        },{passive:true});
       });
     }
-    setupWhatsAppLinks();
+  })();
 
-    function showWaFloat(){
-      var f = document.getElementById('wa-float');
-      if(!f) return;
-      if(window.innerWidth <= 768){
-        f.style.display = 'flex';
-      }
-    }
+  // Autoplay del vídeo cuando está visible + botón para activar sonido
+  (function(){
+    var vid=document.getElementById('introVid');
+    var btn=document.getElementById('unmute');
+    if(!vid || !('IntersectionObserver' in window)) return;
 
-    // Cookies + Meta Pixel
-    (function(){
-      var CK = 'cookie_consent_v1';
-      var b  = document.getElementById('cookie');
+    vid.muted = true; // necesario para permitir autoplay
+    btn.style.display = 'inline-flex';
 
-      function show(){ b.style.display = 'grid'; }
-      function hide(){ b.style.display = 'none'; }
-
-      var acceptBtn = document.getElementById('cAccept');
-      if(acceptBtn){
-        acceptBtn.onclick = function(){
-          localStorage.setItem(CK,'accepted');
-          hide();
-        };
-      }
-
-      // Mostrar banner sólo si no hay preferencia guardada
-      if(!localStorage.getItem(CK)){
-        show();
-      }
-
-      // Iniciar pixel siempre (mejor atribución)
-      pixel();
-      showWaFloat();
-
-      function pixel(){
-        if(window.fbq) return;
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
-          n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
-          t=b.createElement(e);t.async=!0;t.src=v;
-          s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
-        }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-        fbq("init", "1472158240804532");
-
-// Disparamos PageView cuando la página termina de cargar
-window.addEventListener("load", function () {
-  fbq("track", "PageView");
-});
-
-
-        // Disparo manual de Lead en todos los botones de WhatsApp
-        ["wa-header","wa-mid","wa","wa-float"].forEach(function(id){
-          var el = document.getElementById(id);
-          if(el) el.addEventListener('click',function(){
-            fbq('track','Lead',{
-              content_name:'Programa personalizado (3 meses + 3 sesiones)',
-              value:374,
-              currency:'EUR',
-              button_id:id
-            });
-          },{passive:true});
-        });
-      }
-    })();
-
-    // Autoplay del vídeo cuando está visible + botón para activar sonido
-    (function(){
-      var vid=document.getElementById('introVid');
-      var btn=document.getElementById('unmute');
-      if(!vid || !('IntersectionObserver' in window)) return;
-
-      vid.muted = true; // necesario para permitir autoplay
-      btn.style.display = 'inline-flex';
-
-      var io=new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if(e.isIntersecting && e.intersectionRatio>=0.5){
-            vid.play().catch(function(){});
-          } else {
-            vid.pause();
-          }
-        });
-      },{threshold:[0.5]});
-
-      io.observe(vid);
-
-      btn.addEventListener('click',function(){
-        vid.muted=false;
-        vid.play().catch(function(){});
-        btn.style.display='none';
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting && e.intersectionRatio>=0.5){
+          vid.play().catch(function(){});
+        } else {
+          vid.pause();
+        }
       });
-    })();
-  </script>
+    },{threshold:[0.5]});
+
+    io.observe(vid);
+
+    btn.addEventListener('click',function(){
+      vid.muted=false;
+      vid.play().catch(function(){});
+      btn.style.display='none';
+    });
+  })();
+</script>
+
 
   <noscript>
     <img height="1" width="1" style="display:none"
