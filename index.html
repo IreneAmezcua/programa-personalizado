@@ -429,8 +429,13 @@
           s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
         }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-        fbq('init','1472158240804532');
-        fbq('track','PageView');
+        fbq("init", "1472158240804532");
+
+// Disparamos PageView cuando la página termina de cargar
+window.addEventListener("load", function () {
+  fbq("track", "PageView");
+});
+
 
         // Disparo manual de Lead en todos los botones de WhatsApp
         ["wa-header","wa-mid","wa","wa-float"].forEach(function(id){
