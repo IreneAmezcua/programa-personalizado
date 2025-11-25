@@ -107,11 +107,27 @@
     footer a{color:#0ea5e9;text-decoration:underline}
 
     /* Cookies */
-    .cookie{position:fixed;left:16px;right:16px;bottom:16px;background:#f8f1ea;color:#1f2937;border:1px solid #e7d8cc;border-radius:12px;padding:12px 14px;display:none;gap:10px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.08);z-index:30}
-    .cookie p{margin:0 0 8px;font-size:14px}
-    .cookie .actions{display:flex;gap:8px}
-    .cookie button{border:1px solid #d6d3d1;border-radius:10px;padding:10px 12px;font-weight:700;cursor:pointer;background:#fff}
+    .cookie{
+      position:fixed;left:16px;right:16px;bottom:16px;
+      background:#f8f1ea;color:#1f2937;
+      border:1px solid #e7d8cc;border-radius:12px;
+      padding:12px 14px;display:none;
+      gap:10px;align-items:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      z-index:30;
+    }
+    .cookie p{margin:4px 0 8px;font-size:14px}
+    .cookie .actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .cookie button{
+      border:1px solid #d6d3d1;border-radius:10px;
+      padding:8px 12px;font-weight:700;
+      cursor:pointer;background:#fff;font-size:14px;
+    }
     .cookie .accept{background:#22c55e;border-color:#16a34a;color:#052e16}
+    .cookie .actions a{
+      font-size:13px;color:#4b5563;
+      text-decoration:underline;
+    }
 
     /* Botón flotante WhatsApp */
     .wa-float{
@@ -158,9 +174,8 @@
       .frame-16x9 video{object-fit:cover;}
     }
     .photo-break figure {
-  margin: 0;
-}
-
+      margin: 0;
+    }
   </style>
 </head>
 
@@ -348,10 +363,10 @@
   <div id="cookie" class="cookie">
     <div style="flex:1">
       <strong>Tu privacidad</strong>
-      <p>Usamos cookies para análisis y marketing. Más info en la <a href="/programa-personalizado/legal/cookies.html">Política de Cookies</a>.</p>
+      <p>Usamos cookies propias y de terceros para mejorar tu experiencia y analizar los resultados de la web. Más info en la <a href="/programa-personalizado/legal/cookies.html">Política de Cookies</a>.</p>
       <div class="actions">
         <button class="accept" id="cAccept">Aceptar</button>
-        <button id="cReject">Rechazar</button>
+        <a href="/programa-personalizado/legal/cookies.html">Configurar cookies</a>
       </div>
     </div>
   </div>
@@ -382,20 +397,28 @@
 
     // Cookies + Meta Pixel
     (function(){
-      var CK='cookie_consent_v1';
-      var b=document.getElementById('cookie');
+      var CK = 'cookie_consent_v1';
+      var b  = document.getElementById('cookie');
 
-      function has(){return ['accepted','rejected'].includes(localStorage.getItem(CK));}
-      function ok(){return localStorage.getItem(CK)==='accepted';}
-      function show(){b.style.display='grid';}
-      function hide(){b.style.display='none';}
-      function accept(){localStorage.setItem(CK,'accepted');hide();pixel();showWaFloat();}
-      function reject(){localStorage.setItem(CK,'rejected');hide();showWaFloat();}
+      function show(){ b.style.display = 'grid'; }
+      function hide(){ b.style.display = 'none'; }
 
-      document.getElementById('cAccept').onclick=accept;
-      document.getElementById('cReject').onclick=reject;
+      var acceptBtn = document.getElementById('cAccept');
+      if(acceptBtn){
+        acceptBtn.onclick = function(){
+          localStorage.setItem(CK,'accepted');
+          hide();
+        };
+      }
 
-      if(!has()) show(); else { if(ok()) pixel(); showWaFloat(); }
+      // Mostrar banner sólo si no hay preferencia guardada
+      if(!localStorage.getItem(CK)){
+        show();
+      }
+
+      // Iniciar pixel siempre (mejor atribución)
+      pixel();
+      showWaFloat();
 
       function pixel(){
         if(window.fbq) return;
@@ -403,14 +426,15 @@
           n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
           if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
           t=b.createElement(e);t.async=!0;t.src=v;
-          s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+          s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
         }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
         fbq('init','1472158240804532');
         fbq('track','PageView');
 
+        // Disparo manual de Lead en todos los botones de WhatsApp
         ["wa-header","wa-mid","wa","wa-float"].forEach(function(id){
-          var el=document.getElementById(id);
+          var el = document.getElementById(id);
           if(el) el.addEventListener('click',function(){
             fbq('track','Lead',{
               content_name:'Programa personalizado (3 meses + 3 sesiones)',
