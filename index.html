@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Programa personalizado (3 meses + 3 sesiones) | Irene Amezcua</title>
-  <meta name="description" content="Programa online de 3 meses para reordenar tus hábitos y cuidar tu bienestar. Opción online desde 79 € y opción con 3 sesiones personalizadas con -25 % en Black Friday y Cyber Monday. Escríbele a Irene por WhatsApp." />
+  <meta name="description" content="Programa online de 3 meses para reordenar tus hábitos y cuidar tu bienestar. Opción online por 79 € y opción con 3 sesiones personalizadas por 499 €. Escríbele a Irene por WhatsApp." />
   <meta name="theme-color" content="#ffffff" />
 
   <link rel="canonical" href="https://ireneamezcua.github.io/programa-personalizado/" />
@@ -14,19 +14,19 @@
   <meta property="og:locale" content="es_ES" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Programa personalizado (3 meses + 3 sesiones) | Irene Amezcua" />
-  <meta property="og:description" content="Programa de 3 meses con opción online (79 €) y opción con sesiones personalizadas (374 €) en Black Friday y Cyber Monday. Escríbele a Irene por WhatsApp." />
+  <meta property="og:description" content="Programa de 3 meses con opción online por 79 € y opción con sesiones personalizadas por 499 €. Escríbele a Irene por WhatsApp." />
   <meta property="og:url" content="https://ireneamezcua.github.io/programa-personalizado/" />
   <meta property="og:image" content="https://ireneamezcua.github.io/programa-personalizado/img/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Irene Amezcua" />
-  <meta property="product:price:amount" content="374.00" />
+  <meta property="product:price:amount" content="499.00" />
   <meta property="product:price:currency" content="EUR" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Programa personalizado (3 meses + 3 sesiones) | Irene Amezcua" />
-  <meta name="twitter:description" content="Programa de 3 meses con opción online (79 €) y opción con sesiones personalizadas (374 €) en Black Friday y Cyber Monday." />
+  <meta name="twitter:description" content="Programa de 3 meses con opción online por 79 € y opción con sesiones personalizadas por 499 €." />
   <meta name="twitter:image" content="https://ireneamezcua.github.io/programa-personalizado/img/og.jpg" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -166,6 +166,26 @@
       margin: 0;
     }
 
+    /* Galería visual del día a día */
+    .program-gallery{
+      display:grid;
+      gap:16px;
+      margin-top:16px;
+    }
+    .program-gallery img{
+      width:100%;
+      display:block;
+      border-radius:14px;
+      border:1px solid var(--line);
+    }
+    .program-gallery-copy{
+      background:var(--beige);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      color:var(--muted);
+    }
+
     /* Lead corta solo en móvil, lead larga solo en desktop */
     @media (max-width: 768px){
       .lead-long{display:none;}
@@ -181,19 +201,6 @@
         aspect-ratio:9/16;
       }
       .frame-16x9 video{object-fit:cover;}
-    }
-
-    /* Countdown superior */
-    .countdown-bar{
-      background:#111827;
-      color:#f9fafb;
-      text-align:center;
-      font-size:13px;
-      padding:6px 12px;
-    }
-    .countdown-bar strong{
-      margin-left:4px;
-      font-variant-numeric:tabular-nums;
     }
 
     /* Toggle de planes en "Qué encontrarás dentro" */
@@ -296,12 +303,6 @@
 
 <body>
 
-  <!-- Barra de cuenta atrás -->
-  <div class="countdown-bar">
-    Oferta Black Friday &amp; Cyber Monday activa hasta medianoche del lunes.
-    <strong id="countdown">--d --:--:--</strong>
-  </div>
-
   <div class="wrap">
     <main class="container">
 
@@ -319,15 +320,14 @@
           Durante los últimos meses, muchas personas me han escrito con el mismo deseo: mantener cambios reales y aprender a cuidarse de forma consciente y sostenible. Por eso, he creado este programa online de tres meses con dos formas de acompañamiento: una opción accesible para empezar ya y otra con sesiones 1-a-1 conmigo para profundizar en tu caso.
         </p>
 
-        <!-- urgencia arriba -->
         <span class="badge-urgency badge-urgency--block">
-          Oferta Black Friday &amp; Cyber Monday · Solo 2 últimas plazas con sesiones personalizadas a 374 €.
+          Dos formas de acompañamiento para elegir la que mejor encaje contigo.
         </span>
 
         <div class="cta-wrap cta-spacer">
           <a id="wa-header" class="button button-lg" href="#" target="_blank" rel="nofollow noopener">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.06 0 12.06 12.06 0 0 0 0 12.06c0 2.13.56 4.2 1.64 6.03L0 24l6.09-1.6a12.03 12.03 0 0 0 5.97 1.6h.01A12.06 12.06 0 0 0 24 12.06c0-3.22-1.25-6.24-3.48-8.58ZM12.06 22c-1.9 0-3.77-.5-5.41-1.45l-.39-.23-3.62.95.97-3.53-.25-.36A9.95 9.95 0 1 1 22.01 12 9.95 9.95 0 0 1 12.06 22Zm5.71-7.43c-.31-.16-1.86-.92-2.15-1.03-.29-.11-.5-.16-.71.16-.21.31-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.31-.16-1.3-.48-2.47-1.54-.91-.81-1.52-1.81-1.7-2.12-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.32-.52.11-.21.05-.39-.03-.55-.08-.16-.71-1.71-.98-2.35-.26-.63-.52-.54-.71-.55l-.6-.01c-.2 0-.52.08-.79.39-.27.31-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.08.16.21 2.11 3.22 5.12 4.51.72.31 1.29.5 1.73.64.73.23 1.39.2 1.91.12.58-.09 1.86-.76 2.12-1.49.26-.73.26-1.35.18-1.49-.08-.14-.29-.23-.6-.39Z"/></svg>
-            <span>Hablar con Irene por WhatsApp</span>
+            <span>Quiero que Irene valore mi caso</span>
           </a>
         </div>
       </header>
@@ -335,7 +335,7 @@
       <section>
         <img src="img/cover.jpg" class="photo" alt="">
         <p class="muted" style="font-size:14px;margin-top:6px;">
-          Tienes dos formas de trabajar estos 3 meses: acceso online al contenido por <strong>79 €</strong> o programa completo con sesiones personalizadas por <strong>374 €</strong> (antes 499 €).
+          Tienes dos formas de trabajar estos 3 meses: acceso online al contenido por <strong>79 €</strong> o programa completo con sesiones personalizadas por <strong>499 €</strong>.
         </p>
       </section>
 
@@ -368,7 +368,7 @@
 
         <div class="plan-toggle">
           <button type="button" class="active" data-plan-toggle="online">Programa online (79&nbsp;€)</button>
-          <button type="button" data-plan-toggle="premium">Programa con sesiones 1-a-1 (374&nbsp;€)</button>
+          <button type="button" data-plan-toggle="premium">Programa con sesiones 1-a-1 (499&nbsp;€)</button>
         </div>
 
         <!-- Detalle programa online -->
@@ -415,7 +415,7 @@
       <div class="cta-wrap cta-spacer">
         <a id="wa-mid" class="button" href="#" target="_blank" rel="nofollow noopener">
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.06 0 12.06 12.06 0 0 0 0 12.06c0 2.13.56 4.2 1.64 6.03L0 24l6.09-1.6a12.03 12.03 0 0 0 5.97 1.6h.01A12.06 12.06 0 0 0 24 12.06c0-3.22-1.25-6.24-3.48-8.58ZM12.06 22c-1.9 0-3.77-.5-5.41-1.45l-.39-.23-3.62.95.97-3.53-.25-.36A9.95 9.95 0 1 1 22.01 12 9.95 9.95 0 0 1 12.06 22Zm5.71-7.43c-.31-.16-1.86-.92-2.15-1.03-.29-.11-.5-.16-.71.16-.21.31-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.31-.16-1.3-.48-2.47-1.54-.91-.81-1.52-1.81-1.7-2.12-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.32-.52.11-.21.05-.39-.03-.55-.08-.16-.71-1.71-.98-2.35-.26-.63-.52-.54-.71-.55l-.6-.01c-.2 0-.52.08-.79.39-.27.31-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.08.16.21 2.11 3.22 5.12 4.51.72.31 1.29.5 1.73.64.73.23 1.39.2 1.91.12.58-.09 1.86-.76 2.12-1.49.26-.73.26-1.35.18-1.49-.08-.14-.29-.23-.6-.39Z"/></svg>
-          <span>Quiero saber si es para mí (WhatsApp)</span>
+          <span>Tengo dudas sobre qué opción necesito</span>
         </a>
       </div>
 
@@ -424,6 +424,18 @@
         <p class="muted">
           No es un curso teórico ni una guía genérica. Es un acompañamiento real, con seguimiento personalizado y herramientas prácticas desde el primer día. Adaptamos juntos las sesiones (en la opción premium) y los mensajes a tu ritmo y a tus objetivos.
         </p>
+      </section>
+
+      <section id="dia-a-dia">
+        <h2>Así se traduce el programa en tu día a día</h2>
+        <div class="program-gallery-copy">
+          Alimentación, movimiento, suplementación, descanso y pequeñas rutinas sostenibles. El objetivo es ayudarte a integrar cambios reales en tu vida, sin depender de soluciones rígidas o difíciles de mantener.
+        </div>
+        <div class="program-gallery">
+          <img src="img/ima-1.jpg" alt="Hábitos de alimentación y bienestar dentro del programa personalizado">
+          <img src="img/ima-2.jpg" alt="Rutinas de movimiento, desayuno y bienestar del programa personalizado">
+          <img src="img/ima-3.jpg" alt="Alimentación, ejercicio y suplementación dentro del programa personalizado">
+        </div>
       </section>
 
       <!-- FOTO INTERMEDIA -->
@@ -450,7 +462,7 @@
         <h2>Empieza hoy mismo</h2>
 
         <span class="badge-urgency badge-urgency--block">
-          Aprovecha la oferta antes de que termine el lunes. Programa online sin límite de plazas · Solo 2 últimas plazas con sesiones personalizadas.
+          Elige la modalidad que mejor encaje contigo o escríbeme si necesitas orientación antes de decidir.
         </span>
 
         <!-- Dos opciones de precio -->
@@ -465,7 +477,7 @@
               <p class="price-original">Antes 99 €</p>
               <p class="price">79&nbsp;€</p>
             </div>
-            <p class="plan-saving">-20 % Black Friday (ahorras 20 €)</p>
+            <p class="plan-saving">Precio especial: ahorras 20 €</p>
 
             <ul class="muted">
               <li>Acceso a los <strong>3 vídeos grabados</strong> (1h 30 min cada uno).</li>
@@ -477,7 +489,7 @@
             <div class="cta-wrap">
               <a id="wa-online" class="button" href="#" target="_blank" rel="nofollow noopener">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.06 0 12.06 12.06 0 0 0 0 12.06c0 2.13.56 4.2 1.64 6.03L0 24l6.09-1.6a12.03 12.03 0 0 0 5.97 1.6h.01A12.06 12.06 0 0 0 24 12.06c0-3.22-1.25-6.24-3.48-8.58ZM12.06 22c-1.9 0-3.77-.5-5.41-1.45l-.39-.23-3.62.95.97-3.53-.25-.36A9.95 9.95 0 1 1 22.01 12 9.95 9.95 0 0 1 12.06 22Zm5.71-7.43c-.31-.16-1.86-.92-2.15-1.03-.29-.11-.5-.16-.71.16-.21.31-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.31-.16-1.3-.48-2.47-1.54-.91-.81-1.52-1.81-1.7-2.12-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.32-.52.11-.21.05-.39-.03-.55-.08-.16-.71-1.71-.98-2.35-.26-.63-.52-.54-.71-.55l-.6-.01c-.2 0-.52.08-.79.39-.27.31-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.08.16.21 2.11 3.22 5.12 4.51.72.31 1.29.5 1.73.64.73.23 1.39.2 1.91.12.58-.09 1.86-.76 2.12-1.49.26-.73.26-1.35.18-1.49-.08-.14-.29-.23-.6-.39Z"/></svg>
-                <span>Quiero acceso al programa online</span>
+                <span>Quiero empezar con el programa online</span>
               </a>
             </div>
           </article>
@@ -488,14 +500,9 @@
             <p class="plan-tag">Para quienes quieren acompañamiento 1-a-1 conmigo.</p>
 
             <div class="plan-price-row">
-              <p class="price-original">Antes 499 €</p>
-              <p class="price">374&nbsp;€</p>
+              <p class="price">499&nbsp;€</p>
             </div>
-            <p class="plan-saving">-25 % Black Friday (ahorras 125 €)</p>
-            <p class="plan-spots">
-              <span class="old-spots">5 plazas</span>
-              <strong>2 últimas plazas a 374 €</strong>
-            </p>
+            <p class="plan-spots"><strong>Recomendado si buscas acompañamiento personalizado.</strong></p>
 
             <ul class="muted">
               <li>Todo lo incluido en el <strong>programa online</strong>.</li>
@@ -506,7 +513,7 @@
             <div class="cta-wrap">
               <a id="wa-premium" class="button" href="#" target="_blank" rel="nofollow noopener">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.06 0 12.06 12.06 0 0 0 0 12.06c0 2.13.56 4.2 1.64 6.03L0 24l6.09-1.6a12.03 12.03 0 0 0 5.97 1.6h.01A12.06 12.06 0 0 0 24 12.06c0-3.22-1.25-6.24-3.48-8.58ZM12.06 22c-1.9 0-3.77-.5-5.41-1.45l-.39-.23-3.62.95.97-3.53-.25-.36A9.95 9.95 0 1 1 22.01 12 9.95 9.95 0 0 1 12.06 22Zm5.71-7.43c-.31-.16-1.86-.92-2.15-1.03-.29-.11-.5-.16-.71.16-.21.31-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.31-.16-1.3-.48-2.47-1.54-.91-.81-1.52-1.81-1.7-2.12-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.32-.52.11-.21.05-.39-.03-.55-.08-.16-.71-1.71-.98-2.35-.26-.63-.52-.54-.71-.55l-.6-.01c-.2 0-.52.08-.79.39-.27.31-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.08.16.21 2.11 3.22 5.12 4.51.72.31 1.29.5 1.73.64.73.23 1.39.2 1.91.12.58-.09 1.86-.76 2.12-1.49.26-.73.26-1.35.18-1.49-.08-.14-.29-.23-.6-.39Z"/></svg>
-                <span>Quiero sesiones personalizadas</span>
+                <span>Quiero información sobre el programa personalizado</span>
               </a>
             </div>
           </article>
@@ -549,7 +556,7 @@
   <!-- Botón flotante WhatsApp -->
   <a id="wa-float" class="wa-float" href="#" target="_blank" rel="nofollow noopener">
     <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.06 0 12.06 12.06 0 0 0 0 12.06c0 2.13.56 4.2 1.64 6.03L0 24l6.09-1.6a12.03 12.03 0 0 0 5.97 1.6h.01A12.06 12.06 0 0 0 24 12.06c0-3.22-1.25-6.24-3.48-8.58ZM12.06 22c-1.9 0-3.77-.5-5.41-1.45l-.39-.23-3.62.95.97-3.53-.25-.36A9.95 9.95 0 1 1 22.01 12 9.95 9.95 0 0 1 12.06 22Zm5.71-7.43c-.31-.16-1.86-.92-2.15-1.03-.29-.11-.5-.16-.71.16-.21.31-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.31-.16-1.3-.48-2.47-1.54-.91-.81-1.52-1.81-1.7-2.12-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.32-.52.11-.21.05-.39-.03-.55-.08-.16-.71-1.71-.98-2.35-.26-.63-.52-.54-.71-.55l-.6-.01c-.2 0-.52.08-.79.39-.27.31-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.08.16.21 2.11 3.22 5.12 4.51.72.31 1.29.5 1.73.64.73.23 1.39.2 1.91.12.58-.09 1.86-.76 2.12-1.49.26-.73.26-1.35.18-1.49-.08-.14-.29-.23-.6-.39Z"/></svg>
-    <span>Hablar con Irene por WhatsApp</span>
+    <span>Hablar con Irene</span>
   </a>
 
   <!-- Cookies -->
@@ -571,37 +578,6 @@
     if (y) y.textContent = new Date().getFullYear();
   })();
 
-  // Cuenta atrás Black Friday / Cyber Monday
-  (function(){
-    var el = document.getElementById('countdown');
-    if(!el) return;
-
-    // Cambia esta fecha si lo necesitas (hora Madrid)
-    var target = new Date('2025-12-02T00:00:00+01:00');
-
-    function update(){
-      var now = new Date();
-      var diff = target - now;
-
-      if(diff <= 0){
-        el.textContent = '0d 00:00:00';
-        return;
-      }
-      var d = Math.floor(diff / 86400000); diff -= d*86400000;
-      var h = Math.floor(diff / 3600000);  diff -= h*3600000;
-      var m = Math.floor(diff / 60000);    diff -= m*60000;
-      var s = Math.floor(diff / 1000);
-
-      el.textContent = d + 'd ' +
-        String(h).padStart(2,'0') + ':' +
-        String(m).padStart(2,'0') + ':' +
-        String(s).padStart(2,'0');
-    }
-
-    update();
-    setInterval(update,1000);
-  })();
-
   // WhatsApp links con mensaje adaptado por opción
   function setupWhatsAppLinks(){
     var phone = "34625362844";
@@ -611,7 +587,7 @@
       "wa-header":  "Hola Irene, he visto tu programa de 3 meses y quiero más información sobre las opciones.",
       "wa-mid":     "Hola Irene, he visto tu programa de 3 meses y quiero saber si encaja conmigo.",
       "wa-online":  "Hola Irene, estoy interesada en el Programa online (79 €) y quiero más información.",
-      "wa-premium": "Hola Irene, estoy interesada en el Programa con sesiones personalizadas (374 €) y quiero más información.",
+      "wa-premium": "Hola Irene, estoy interesada en el Programa con sesiones personalizadas (499 €) y quiero más información.",
       "wa-float":   "Hola Irene, he visto tu programa de 3 meses y quiero más información."
     };
 
@@ -686,7 +662,7 @@
       // Disparo manual de Lead en todos los botones de WhatsApp (con valor según opción)
       var valueMap = {
         "wa-online": 79,
-        "wa-premium": 374
+        "wa-premium": 499
       };
 
       ["wa-header","wa-mid","wa-online","wa-premium","wa-float"].forEach(function(id){
